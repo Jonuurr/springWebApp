@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Alta de usuarios</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container text-center">
+        <h1>Alta de usuarios</h1>
+    </div>
+    <div>
+    	<form th:action="@{/registroUsuario}" th:object="${usuario}" method="post">
+    		<div>
+    			<label>Nombre</label>
+    			<input type="text" th:field="*{nombre}" required/>
+    		</div>
+    		<div>
+    			<label>Edad</label>
+    			<input type="number" th:field="*{edad}" required/>
+    		</div>
+    		<div>
+    			<label>Email</label>
+    			<input type="email" th:field="*{email}" required/>
+    		</div>
+    		<div>
+    			<label>Contraseña</label>
+    			<input type="password" th:field="*{contrasena}" required/>
+    		</div>
+    		<div>
+    			<button type="submit">Registrarse</button>
+    		</div>
+    	</form>
+    </div>
+</body>
+</html>

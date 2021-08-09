@@ -27,7 +27,7 @@ public class TestRepositorioUsuario {
 	    usuario.setNombre("Jon");
 	    usuario.setEdad(25);
 	    usuario.setEmail("jon@gmail.com");
-	    usuario.setContraseña("jonpass");
+	    usuario.setContrasena("jonpass");
 	     
 	    Usuario usuarioGuardado = rep.save(usuario);
 	     
@@ -35,5 +35,14 @@ public class TestRepositorioUsuario {
 	     
 	    assertThat(usuario.getEmail()).isEqualTo(usuarioExistente.getEmail());
 	     
+	}
+	
+	@Test
+	public void testEncontrarUsuarioPorEmail() {
+		String email = "jon@gmail.com";
+		
+		Usuario usuario = rep.encontrarUsuarioPorEmail(email);
+		
+		assertThat(usuario).isNotNull();
 	}
 }
