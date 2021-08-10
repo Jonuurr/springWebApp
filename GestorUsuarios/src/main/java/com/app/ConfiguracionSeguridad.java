@@ -55,7 +55,7 @@ public class ConfiguracionSeguridad extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/listado")
                 .permitAll()
             .and()
-            .logout().logoutSuccessUrl("/").permitAll();
+            .logout().logoutSuccessUrl("/login").permitAll();
     }
      
      

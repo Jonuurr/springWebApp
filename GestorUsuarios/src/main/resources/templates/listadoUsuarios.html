@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="ISO-8859-1" content="text/html; charset=utf-8">
     <title>Listado de usuarios</title>
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
 </head>
 <body>
     <div class="container text-center">
         <h1>Listado de usuarios</h1>
+    </div>
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="usuario: ${listado}">
+                    <td th:text="${usuario.nombre}">Nombre</td>
+                    <td th:text="${usuario.edad}">Edad</td>
+                    <td th:text="${usuario.email}">Email</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+    	<h2><a th:href="@{/logout}">Salir</a></h2>
     </div>
 </body>
 </html>

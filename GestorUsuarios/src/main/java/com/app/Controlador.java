@@ -1,5 +1,7 @@
 package com.app;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -32,8 +34,11 @@ public class Controlador {
 	}
 	
 	@GetMapping("/listado")
-	public String mostrarListado() {
+	public String mostrarListado(Model model) {
 		
+		List<Usuario> listado = rep.findAll();
+	    model.addAttribute("listado", listado);
+	    
 		return "listadoUsuarios";
 	}
 }
