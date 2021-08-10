@@ -1,6 +1,7 @@
 package com.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +22,18 @@ public class Controlador {
 	
 	@PostMapping("/registroUsuario")
 	public String registrarUsuario(Usuario usuario) {
+		
+		BCryptPasswordEncoder codificador = new BCryptPasswordEncoder();
+		usuario.setContrasena(codificador.encode(usuario.getContrasena()));
+		
 		rep.save(usuario);
 		
 		return "altaCompletada";
+	}
+	
+	@GetMapping("/listado")
+	public String mostrarListado() {
+		
+		return "listadoUsuarios";
 	}
 }
