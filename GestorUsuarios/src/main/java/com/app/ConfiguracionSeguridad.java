@@ -51,11 +51,16 @@ public class ConfiguracionSeguridad extends WebSecurityConfigurerAdapter {
             .anyRequest().permitAll()
             .and()
             .formLogin()
+            	.loginPage("/login")
                 .usernameParameter("email")
+                .passwordParameter("contrasena")
                 .defaultSuccessUrl("/listado")
-                .permitAll()
+                .permitAll()  
+            .permitAll()
             .and()
-            .logout().logoutSuccessUrl("/login").permitAll();
+            .logout()
+	            .logoutSuccessUrl("/login")
+	            .permitAll();
     }
      
      

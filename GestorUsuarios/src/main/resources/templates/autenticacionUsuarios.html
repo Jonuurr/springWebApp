@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1" content="text/html; charset=utf-8">
+    <title>Autenticación de usuarios</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container text-center">
+        <h1>Autenticación de usuarios</h1>
+    </div>
+    <div th:if="${param.error}" class="text-danger">
+    	Email o contraseña erróneos
+    </div>
+    <div th:if="${param.logout}" class="alert alert-success">
+    	Has salido de tu cuenta
+    </div>
+    <div>
+    	<form th:action="@{/login}" method="post">
+    		<div>
+    			<label>Email</label>
+    			<input type="email" name="email" class="form-control" placeholder="Email" required autofocus/>
+    		</div>
+    		<div>
+    			<label>Contraseña</label>
+    			<input type="password" name="contrasena" placeholder="Contraseña" required autofocus/>
+    		</div>
+    		<div>
+<!--     			<button type="submit">Iniciar sesión</button> -->
+				<input type="submit" value="Iniciar sesión" class="btn btn-primary"/>
+    		</div>
+    	</form>
+    </div>
+    <div>
+    	<h2><a th:href="@{/login}">¿Ya tienes cuenta?</a></h2>
+    </div>
+</body>
+</html>

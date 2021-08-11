@@ -28,7 +28,9 @@
         </table>
     </div>
     <div>
-    	<h2><a th:href="@{/logout}">Salir</a></h2>
+    	<form th:action="@{logout}" method="post">
+    		<input type="submit" value="Salir"/>
+    	</form>
     </div>
 </body>
 </html>
