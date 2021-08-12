@@ -1,0 +1,19 @@
+@charset "ISO-8859-1";
+
+h1 {
+	font-size: 36px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+p {
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-top: 10px;
+}
+
+div {
+	max-width: 512px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}

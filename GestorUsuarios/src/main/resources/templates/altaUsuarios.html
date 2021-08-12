@@ -4,36 +4,37 @@
     <meta charset="ISO-8859-1" content="text/html; charset=utf-8">
     <title>Alta de usuarios</title>
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="miCSS.css">
 </head>
 <body>
-    <div class="container text-center">
-        <h1>Alta de usuarios</h1>
-    </div>
-    <div>
-    	<form th:action="@{/registroUsuario}" th:object="${usuario}" method="post">
-    		<div>
-    			<label>Nombre</label>
-    			<input type="text" th:field="*{nombre}" required autofocus/>
-    		</div>
-    		<div>
-    			<label>Edad</label>
-    			<input type="number" th:field="*{edad}" required autofocus/>
-    		</div>
-    		<div>
-    			<label>Email</label>
-    			<input type="email" th:field="*{email}" required autofocus/>
-    		</div>
-    		<div>
-    			<label>Contraseña</label>
-    			<input type="password" th:field="*{contrasena}" required autofocus/>
-    		</div>
-    		<div>
-    			<button type="submit">Registrarse</button>
+    <div class="container-fluid text-center">
+    	<form th:action="@{/registroUsuario}" th:object="${usuario}" method="post" style="max-width: 450px; margin: 0 auto">
+    		<div class="border border-dark">
+	    		<h1>Alta de usuarios</h1>
+	    		<p>
+	    			<label>Nombre:</label>
+	    			<input type="text" th:field="*{nombre}" style="width: 100%" required autofocus/>
+	    		</p>
+	    		<p>
+	    			<label>Edad:</label>
+	    			<input type="number" th:field="*{edad}" style="width: 100%" required autofocus/>
+	    		</p>
+	    		<p>
+	    			<label>Email:</label>
+	    			<input type="email" th:field="*{email}" style="width: 100%" required autofocus/>
+	    		</p>
+	    		<p>
+	    			<label>Contraseña:</label>
+	    			<input type="password" th:field="*{contrasena}" style="width: 100%" required autofocus/>
+	    		</p>
+	    		<p>
+	    			<input type="submit" value="Registrarse" class="btn btn-primary" style="width: 200px"/>
+	    		</p>
     		</div>
     	</form>
-    </div>
-    <div>
-    	<h2><a th:href="@{/login}">¿Ya tienes cuenta?</a></h2>
+	    <form th:action="@{/login}" method="get">
+		   	<input type="submit" value="¿Ya tienes cuenta?" class="btn btn-secondary" style="width: 200px; margin-top: 0px"/>
+	   	</form>
     </div>
 </body>
 </html>
