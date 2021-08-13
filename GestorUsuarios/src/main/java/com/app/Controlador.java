@@ -31,7 +31,11 @@ public class Controlador {
 		BCryptPasswordEncoder codificador = new BCryptPasswordEncoder();
 		usuario.setContrasena(codificador.encode(usuario.getContrasena()));
 		
-		rep.save(usuario);
+		try {
+			rep.save(usuario);
+		} catch (Exception e) {
+			return "error";
+		}
 		
 		return "altaCompletada";
 	}

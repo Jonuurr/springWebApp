@@ -2,15 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1" content="text/html; charset=utf-8">
-    <title>Registro de usuario completo</title>
+    <title>Error</title>
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="miCSS.css">
 </head>
 <body>
     <div class="container-fluid text-center">
-	    <h1>Registro completado</h1>
+	    <h1>Ese Email ya está registrado ¿Qué quieres hacer?</h1>
 	   	<form th:action="@{/login}" method="get">
 		   	<input type="submit" value="Iniciar sesión" class="btn btn-outline-secondary" style="width: 200px; margin-top: 0px"/>
+	   	</form>
+	   	<form th:action="@{/}" method="get">
+		   	<input type="submit" value="Registrarse" class="btn btn-outline-secondary" style="width: 200px; margin-top: 10px"/>
 	   	</form>
     </div>
 </body>
